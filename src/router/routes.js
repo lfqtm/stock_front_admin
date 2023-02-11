@@ -21,39 +21,39 @@ import fa from "element-ui/src/locale/lang/fa";
 // 所有人都可以访问
 const routes = [
 	{
-		path:'/login',
-		name:'login',
-		isMenu:false,
+		path: '/login',
+		name: 'login',
+		isMenu: false,
 		component: () => import(/* webpackChunkName: "login" */ '@/views/login.vue')
 	},
 
 	{
-		path:'/',
-		name:'welcome',
-		redirect:'/stock',
-		isMenu:false,
-		children:[{
-			path:'/stock',
-			name:'stock',
-			isMenu:false,
+		path: '/',
+		name: 'welcome',
+		redirect: '/stock',
+		isMenu: false,
+		children: [{
+			path: '/stock',
+			name: 'stock',
+			isMenu: false,
 			redirect: '/stockHome',
 			// meta:{title:'大屏显示', icon:'el-icon-s-data'},
 			component: () => import(/* webpackChunkName: "test" */ '@/views/components/stock'),
-			children:[
+			children: [
 				{
 					path: '/stockHome',
 					name: 'stockHome',
-					component: ()=> import('@/views/components/stock/componment/home')
+					component: () => import('@/views/components/stock/componment/home')
 				},
 				{
 					path: '/stockList',
 					name: 'stockList',
-					component: ()=> import('@/views/components/stock/componment/list')
+					component: () => import('@/views/components/stock/componment/list')
 				},
 				{
 					path: '/stockDetail',
 					name: 'stockDetail',
-					component: ()=> import('@/views/components/stock/componment/details')
+					component: () => import('@/views/components/stock/componment/details')
 				}
 			]
 		}]
@@ -61,76 +61,76 @@ const routes = [
 
 	//后续动态从数据库获取
 	{
-		path:'/org',
-		name:"org",
+		path: '/org',
+		name: "org",
 		isMenu: true,
-		meta:{title:'组织管理', icon:'el-icon-s-tools'},
-		children:[
+		meta: { title: '组织管理', icon: 'el-icon-s-tools' },
+		children: [
 			{
-				path:'/user',
-				name:'user',
-				meta:{title:'用户管理', icon:'el-icon-user-solid'},
+				path: '/user',
+				name: 'user',
+				meta: { title: '用户管理', icon: 'el-icon-user-solid' },
 				component: () => import('@/views/components/user')
 			},
 			{
-				path:'/roles',
-				name:'roles',
-				meta:{title:'角色管理', icon:'el-icon-user'},
+				path: '/roles',
+				name: 'roles',
+				meta: { title: '角色管理', icon: 'el-icon-user' },
 				component: () => import('@/views/components/roles')
 			},
 			{
-				path:'/menus',
-				name:'menus',
-				meta:{title:'菜单列表', icon:'el-icon-menu'},
+				path: '/menus',
+				name: 'menus',
+				meta: { title: '菜单列表', icon: 'el-icon-menu' },
 				component: () => import('@/views/components/menus')
 			},
 		]
 	},
 	{
-		path:'/sys',
-		name:"sys",
+		path: '/sys',
+		name: "sys",
 		isMenu: true,
-		meta:{title:'系统管理', icon:'el-icon-s-tools'},
-		children:[
+		meta: { title: '系统管理', icon: 'el-icon-s-tools' },
+		children: [
 			{
-				path:'/logs',
-				name:'logs',
-				meta:{title:'日志管理', icon:'el-icon-s-marketing'},
-				component: () => import('@/views/components/logs')},
-			{
-				path:'/swagger',
-					name:'swagger',
-				meta:{title:'接口管理', icon:'el-icon-s-ticket'},
+				// 	path:'/logs',
+				// 	name:'logs',
+				// 	meta:{title:'日志管理', icon:'el-icon-s-marketing'},
+				// 	component: () => import('@/views/components/logs')},
+				// {
+				path: '/swagger',
+				name: 'swagger',
+				meta: { title: '接口管理', icon: 'el-icon-s-ticket' },
 				component: () => import('@/views/components/swagger')
 			},
 			{
-				path:'/druid/sql',
-					name:'sql',
-				meta:{title:'SQL监控', icon:'el-icon-s-data'},
+				path: '/druid/sql',
+				name: 'sql',
+				meta: { title: 'SQL监控', icon: 'el-icon-s-data' },
 				component: () => import('@/views/components/sql')
 			},
 		]
 	},
 	{
-		path:'/jobAdmin',
-		name:'jobAdmin',
+		path: '/jobAdmin',
+		name: 'jobAdmin',
 		isMenu: true,
-		meta:{title:'定时任务管理', icon:'el-icon-s-tools'},
+		meta: { title: '定时任务管理', icon: 'el-icon-s-tools' },
 		component: () => import(/* webpackChunkName: "login" */ '@/views/components/jobAdmin/index.vue')
 	},
 
 	//后续动态从数据库获取\\
 
 	{
-		path:'/401',
-		name:'401',
-		isMenu:false,
+		path: '/401',
+		name: '401',
+		isMenu: false,
 		component: () => import(/* webpackChunkName: "401" */ '@/views/error/401.vue')
 	},
 	{
-		path:'/404',
-		name:'404',
-		isMenu:false,
+		path: '/404',
+		name: '404',
+		isMenu: false,
 		component: () => import(/* webpackChunkName: "404" */ '@/views/error/404.vue')
 	}
 ];
@@ -188,6 +188,6 @@ const routesMap = [
 			},
 		]
 	},*/
-	{path:'*',redirect:'/404',isMenu:false}
+	{ path: '*', redirect: '/404', isMenu: false }
 ];
-export {routesMap,routes}
+export { routesMap, routes }
